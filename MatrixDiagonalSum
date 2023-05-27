@@ -1,0 +1,21 @@
+class Solution(object):
+    def diagonalSum(self, mat):
+        """
+        :type mat: List[List[int]]
+        :rtype: int
+        """
+        sum = 0
+
+
+        #mat[0][0], mat[1,1], mat[2, 2]
+        #mat[0,2],mat[1, 1], mat[2,0]
+        # 1, 5, 9,3, 5, 7
+    
+        for i in range(len(mat)):# 0,1,2
+            sum += mat[i][i]
+        for j in range(len(mat)):
+            sum += mat[j][(len(mat)-1) - j ]
+        mid = len(mat) // 2
+        if len(mat) % 2 == 1:
+            return sum - mat[mid][mid]
+        return sum
