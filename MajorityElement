@@ -1,0 +1,14 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        from collections import Counter
+        size = len(nums)
+        majority = size / 2
+        dic = Counter(nums)
+        for c in range(size):
+            if dic[nums[c]] > majority and dic[nums[c]] > dic[majority]:
+                majority = nums[c]
+        return majority
