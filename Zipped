@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+stu_num, sub = map(int, input().split())
+res = []
+for i in range(sub):
+    score_list = list(map(float, input().split()))
+    res += [score_list]
+    
+stu_score = zip(*res)
+for val in stu_score:
+    avg = sum(val) / sub
+    print(avg)
