@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+n = int(input())
+sizes = input().split()
+available = Counter(sizes)
+customers = int(input())
+earnings = 0
+for i in range(customers):
+    buy = input().split() # [6, 55]
+    if buy[0] in available and available[buy[0]] > 0:
+        available[buy[0]] -= 1
+        earnings += int(buy[1])
+        
+print(earnings)
+    
