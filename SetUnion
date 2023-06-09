@@ -1,0 +1,8 @@
+eng = int(input())
+eng_people = set(input().split())
+
+french = int(input())
+french_people = set(input().split())
+
+union = eng_people.union(french_people)
+print(len(union))
