@@ -18,9 +18,12 @@ class Solution:
         return prev
 
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        head_copy = copy.deepcopy(head)
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
         
-        reversed_head = self.reverseList(head_copy)
+        reversed_head = self.reverseList(slow)
 
         while head and reversed_head:
             if head.val != reversed_head.val:
