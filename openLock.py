@@ -4,14 +4,13 @@ class Solution:
         def moves(pos):
             res = []
             for i in range(len(pos)):
-                pos_new = pos
-                pos_new = pos[:i] +  str((int(pos_new[i]) + 1) % 10) + pos[i+1:]
+                
+                pos_new = pos[:i] +  str((int(pos[i]) + 1) % 10) + pos[i+1:]
                 res.append(pos_new)
-
-            for i in range(len(pos)):
-                pos_new = pos
-                pos_new = pos[:i] +  str((int(pos_new[i]) - 1 ) % 10) + pos[i+1:]
+               
+                pos_new = pos[:i] +  str((int(pos[i]) - 1 ) % 10) + pos[i+1:]
                 res.append(pos_new)
+                
             return res
 
     
